@@ -534,6 +534,17 @@ describe("GenericContainer", () => {
     await secondStartedContainer.stop();
   });
 
+  // REMOVE AFTER DEVELOPMENT DONE - it.only block
+  it.only("should set the hostname", async () => {
+    const container = await new GenericContainer("cristianrgreco/testcontainer:1.1.14")
+      .withHostname("hostname")
+      .start();
+
+    expect(container.getHost()).toEqual("hostname");
+
+    await container.stop();
+  });
+
   // failing to build an image hangs within the DockerImageClient.build method,
   // that change might be larger so leave it out of this commit but skip the failing test
   it.skip("should throw an error for a target stage that does not exist", async () => {
