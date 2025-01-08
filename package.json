@@ -9,7 +9,6 @@
     "pre-commit": "lint-staged",
     "docs:serve": "docker-compose up",
     "test": "cross-env DEBUG=testcontainers* jest",
-    "test:me": "cross-env DEBUG=testcontainers* jest packages/testcontainers/src/generic-container/generic-container.test.ts",
     "test:ci": "npm run test -- --runInBand --coverage",
     "format": "prettier --write package.json \"packages/**/*.ts\"",
     "lint": "eslint --fix package.json \"packages/**/*.ts\"",

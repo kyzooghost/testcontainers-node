@@ -64,6 +64,7 @@ export interface StartedTestContainer {
   stop(options?: Partial<StopOptions>): Promise<StoppedTestContainer>;
   restart(options?: Partial<RestartOptions>): Promise<void>;
   getHost(): string;
+  getHostname(): string;
   getFirstMappedPort(): number;
   getMappedPort(port: number): number;
   getName(): string;

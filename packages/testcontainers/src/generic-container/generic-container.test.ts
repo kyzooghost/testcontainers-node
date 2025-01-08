@@ -534,13 +534,12 @@ describe("GenericContainer", () => {
     await secondStartedContainer.stop();
   });
 
-  // REMOVE AFTER DEVELOPMENT DONE - it.only block
-  it.only("should set the hostname", async () => {
+  it("should set the hostname", async () => {
     const container = await new GenericContainer("cristianrgreco/testcontainer:1.1.14")
       .withHostname("hostname")
       .start();
 
-    expect(container.getHost()).toEqual("hostname");
+    expect(container.getHostname()).toEqual("hostname");
 
     await container.stop();
   });
